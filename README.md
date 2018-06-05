@@ -1,24 +1,25 @@
-# README
+# AceBook
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Fork this repository to `acebook-teamname` and customize
+the below\*\*
 
-Things you may want to cover:
+[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-* Ruby version
+The card wall is here: <please update>
 
-* System dependencies
+## How to contribute to this project
 
-* Configuration
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
-* Database creation
+## Quickstart
 
-* Database initialization
+First, clone this repository. Then:
 
-* How to run the test suite
+```bash
+> bundle install
+> bin/rails db:create
+> bin/rails db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+> bundle exec rspec # Run the tests to ensure it works
+> bin/rails server # Start the server at localhost:3000
+```
