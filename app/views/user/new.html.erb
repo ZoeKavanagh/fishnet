@@ -1,0 +1,12 @@
+<%= form_for user_new_path do |form| %>
+  <%= form.label :firstname %>
+  <%= form.text_field :firstname %>
+  <%= form.label :lastname %>
+  <%= form.text_field :lastname %>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <%= form.label :password %>
+  <%= form.text_field :password %>
+
+  <%= form.submit "Submit" %>
+<% end %>
