@@ -11,6 +11,6 @@ RSpec.describe Post, type: :model do
     end
 
     it 'has a body' do
-      expect(@post1.body).to eq :post.body
+      expect(Post.all[0].body).to eq @post1.body
     end
 end
