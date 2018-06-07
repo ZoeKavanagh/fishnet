@@ -1,11 +1,15 @@
-<h1>Posts feed</h1>
+<h1>Feed</h1>
 
 <%= render('new.html.erb') %>
 
+<h1>Latest posts</h1>
+
+<% @posts.each do |post| %>
 <article class="post">
   <header>
-    <%= content_tag(:div, "", :class => "post-user") %>
-    <%= content_tag(:time, "", :class => "post-timestamp") %>
+    <%= content_tag(:div, post.user, :class => "post-user") %>
+    <%= content_tag(:time, post.updated_at, :class => "post-timestamp") %>
   </header>
-  <%= content_tag(:main, "", :class => "post-body" ) %>
+  <%= content_tag(:main, post.body, :class => "post-body" ) %>
 </article>
+<% end %>

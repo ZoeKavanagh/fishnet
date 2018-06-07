@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def all
-    
+    @posts = Post.all()
   end
 
   def new
