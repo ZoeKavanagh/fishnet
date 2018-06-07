@@ -3,4 +3,9 @@ RSpec.feature 'View post', type: :feature do
     visit '/posts'
     expect(page).to have_content('Posts feed')
   end
+
+  scenario 'User can view a post' do
+    visit '/posts'
+    expect(page).to have_css('.post')
+  end
 end
