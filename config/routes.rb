@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/user/new' => 'user#new'
 
   get '/posts' => 'posts#all'
+  post '/posts/new' => 'posts#new'
 end
