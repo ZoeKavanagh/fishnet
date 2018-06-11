@@ -1,16 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
+  before (:each) do
+    @user = create(:user)
+    @post = create(:post, user: @user)
+  end
 
-    before(:each) do
-      @post1 = create(:post_1)
+  context '#create' do
+    it 'adds a post content' do
+      expect(Post.all.last.content).to eq @post.content
     end
 
-    it 'is a valid post with valid attributes' do
-      expect(@post1).to be_valid
+    it 'adds user to a post' do
+      expect(Post.all.last.user).to eq @user
     end
-
-    it 'has a body' do
-      expect(Post.all.last.body).to eq @post1.body
-    end
+  end
 end
