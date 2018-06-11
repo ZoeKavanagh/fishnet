@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
 
-    before (:all) do
-      @post1 = create(:post)
+    before(:each) do
+      @post1 = create(:post_1)
     end
 
     it 'is a valid post with valid attributes' do
@@ -11,6 +11,6 @@ RSpec.describe Post, type: :model do
     end
 
     it 'has a body' do
-      expect(Post.all[0].body).to eq @post1.body
+      expect(Post.all.last.body).to eq @post1.body
     end
 end
