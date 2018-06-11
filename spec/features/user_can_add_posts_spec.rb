@@ -1,6 +1,10 @@
 RSpec.feature 'New post', type: :feature do
-let(:post_body) { 'Sandroller horn shark walu. Candlefish mosquitofish morwong spiny eel' }
+  let(:post_body) { 'Sandroller horn shark walu. Candlefish mosquitofish morwong spiny eel' }
 
+  before (:each) do
+    sign_up
+  end
+  
   scenario 'User can add a new post to the posts database' do
     visit new_post_path
     fill_in 'Content', with: post_body

@@ -51,11 +51,15 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe "POST #create" do
+  xdescribe "POST #create" do
     context "with valid params" do
       it "creates a new Post" do
+        params = { :content => 'FISHFISHFISHFISH' }
+        p Post.create(params)
         expect {
-          valid_attributes
+          post :create,
+          params: { post: params },
+          session: valid_session
         }.to change(Post, :count).by(1)
       end
 
