@@ -1,0 +1,4 @@
+<%= form_tag(controller: 'posts', action: 'new', method: 'post', class: 'new-post-form') do %>
+  <%= text_field_tag(:body, nil, class: 'new-post-field') %>
+  <%= submit_tag('submit post') %>
+<% end %>
