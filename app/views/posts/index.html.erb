@@ -5,33 +5,19 @@
       <%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
 
       <h1>Feed</h1>
-
-        <div class="card">
+      <% @posts.each do |post| %>
+        <div class="card mb-5">
           <div class="card-header">
             <div class="col-md-6">
-              <p>Name</p>
+              <p><%= post.user.firstname %> <%= post.user.lastname %></p>
             </div>
             <div class="col-md-6">
-              <p class="text-right"><a href="#">Date</a></p>
+              <p class="text-right">
+                <%= link_to post.created_at.strftime('%R %d/%m/%Y'), post %>
+              </p>
             </div>
           </div>
 
-          <div class="card-body">
-            <a href="#">
-              <div class="alert alert-info">
-                <p>Text body stuff</p>
-              </div>
-            </a>
-            <p class="text-right">
-              <i class="far fa-edit fa-lg"></i>
-              <i class="far fa-trash-alt fa-lg"></i>
-            </p>
-          </div>
-        </div>
-
-
-        <% @posts.each do |post| %>
-        <div class="card">
           <div class="card-body">
             <a href="#">
               <%= link_to(post) do %>
@@ -50,7 +36,7 @@
             </p>
           </div>
         </div>
-        <% end %>
+      <% end %>
 
     </div>
   </div>
