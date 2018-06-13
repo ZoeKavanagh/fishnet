@@ -1,0 +1,12 @@
+language: ruby
+
+rvm:
+  - 2.5.1
+
+script:
+  - bundle
+  - bin/rails db:drop
+  - bin/rails db:create
+  - bin/rails db:migrate
+  - bundle exec rspec spec
+  - bin/rails server
