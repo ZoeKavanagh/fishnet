@@ -1,4 +1,17 @@
-<h1>Oh, hey</h1>
-<p>Welcome to the page we could have been at it HOURS AGO had I known what I was actually doing. OK, bye.</p>
+<div class="container">
+  <div class="row">
+  <div class="col-md-6">
+    <%= image_tag 'welcome_fish.jpg', class: 'img-fluid' %>
+  </div>
 
-<p>Random extra paragraph to see if CodePipeline is working...</p>
+  <div class="col-md-6">
+    <h1>Welcome to Fishnet</h1>
+    <div class="col-md-12 border border-dark rounded p-3">
+      <%= render partial: 'devise/registrations/new' %>
+    </div>
+    <div class="col-md-12 rounded p-4">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+</div>

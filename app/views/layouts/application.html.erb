@@ -11,15 +11,34 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <a class="navbar-brand" href="#">
+              <%= image_tag 'logo2_large.png', class: 'img-fluid', width: '66%' %>
+              <span class="h3">Fishnet</h3>
+            </a>
+          </div>
+          <div class="col-md-6 offset-md-4">
+            <% if current_user %>
+              <p class="text-right"><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
+            <% else %>
+              <%= render 'devise/sessions/form' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-    <% if current_user %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Register", new_user_registration_path %>
-      <%= link_to "Login", new_user_session_path %>
-    <% end %>
+    <div class="container">
+      <div class="row">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    </div>
+
     <%= yield %>
+
   </body>
 </html>

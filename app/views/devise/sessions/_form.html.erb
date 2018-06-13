@@ -1,0 +1,22 @@
+<%= form_for(resource, as: resource_name, class: "form-inline", url: session_path(resource_name)) do |f| %>
+  <div class="form-row">
+    <div class="field col-xs-6">
+      <%= f.email_field :email, class: "form-control form-control-sm", placeholder: "Email", autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field col-xs-5">
+      <%= f.password_field :password, class: "form-control form-control-sm", autocomplete: "off" %>
+    </div>
+
+    <!-- <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end -%> -->
+
+    <div class="field col-xs-1">
+      <%= f.submit "Log in", class: 'btn btn-success btn-sm' %>
+    </div>
+  </div>
+<% end %>
