@@ -1,0 +1,11 @@
+language: ruby
+
+rvm:
+  - 2.5.1
+
+script:
+  - bundle exec install
+  - bin/rails db:drop
+  - bin/rails db:create
+  - bin/rails db:migrate
+  - rails s
