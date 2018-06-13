@@ -8,5 +8,5 @@ script:
   - bin/rails db:drop
   - bin/rails db:create
   - bin/rails db:migrate
-  - rspec
+  - bundle exec rspec spec
   - bin/rails server
