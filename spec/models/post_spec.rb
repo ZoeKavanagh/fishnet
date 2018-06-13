@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   before (:each) do
     @user = create(:user)
-    @post = create(:post, user: @user)
+    @post = create(:post_1, user: @user)
   end
 
   context '#create' do
