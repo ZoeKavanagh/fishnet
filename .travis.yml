@@ -8,4 +8,4 @@ script:
   - bin/rails db:drop
   - bin/rails db:create
   - bin/rails db:migrate
-  - rails s
+  - bin/rails server
