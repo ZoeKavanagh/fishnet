@@ -4,7 +4,6 @@
     <title>Fishnet</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" href="/../../assets/styles.css">
     <link rel="stylesheet" href="/../../assets/stylesheets/fontawesome/fontawesome-all.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -29,9 +28,15 @@
     </nav>
 
     <div class="container">
-      <div class="row">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+      <div class="row d-flex align-items-center m-3">
+        <div class="col-md-4 offset-md-4">
+          <% if notice %>
+            <div class="alert alert-primary"><%= notice %></div>
+          <% end %>
+          <% if alert %>
+            <div class="alert alert-warning"><%= alert %></div>
+          <% end %>
+        </div>
       </div>
     </div>
 
