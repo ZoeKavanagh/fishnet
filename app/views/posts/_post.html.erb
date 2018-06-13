@@ -1,0 +1,30 @@
+<div class="card mb-5">
+  <div class="card-header">
+    <div class="col-md-6">
+      <p><%= post.user.firstname %> <%= post.user.lastname %></p>
+    </div>
+    <div class="col-md-6">
+      <p class="text-right">
+        <%= link_to post.created_at.strftime('%R %d/%m/%Y'), post %>
+      </p>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <a href="#">
+      <%= link_to(post) do %>
+        <div class="alert alert-info">
+          <%= post.content %>
+        </div>
+      <% end %>
+    </a>
+    <p class="text-right">
+      <%= link_to(edit_post_path(post)) do %>
+        <i class="far fa-edit fa-lg"></i>
+      <% end %>
+      <%= link_to(post, method: :delete, data: { confirm: 'Are you sure?' }) do %>
+        <i class="far fa-trash-alt fa-lg"></i>
+      <% end %>
+    </p>
+  </div>
+</div>
