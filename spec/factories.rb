@@ -13,4 +13,10 @@ FactoryBot.define do
     password 'flipflipflip'
     password_confirmation 'flipflipflip'
   end
+
+  factory :comment do
+    factory :comment_1 do
+      content 'This is a very nice post!'
+    end
+  end
 end
