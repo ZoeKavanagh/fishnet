@@ -1,11 +1,11 @@
 <%= form_for(resource, as: resource_name, class: "form-inline", url: session_path(resource_name)) do |f| %>
   <div class="form-row">
-    <div class="field col-xs-6">
+    <div class="field col-md-6">
       <%= f.email_field :email, class: "form-control form-control-sm", placeholder: "Email", autofocus: true, autocomplete: "email" %>
     </div>
 
-    <div class="field col-xs-5">
-      <%= f.password_field :password, class: "form-control form-control-sm", autocomplete: "off" %>
+    <div class="field col-md-5">
+      <%= f.password_field :password, class: "form-control form-control-sm", placeholder: "*******", autocomplete: "off" %>
     </div>
 
     <!-- <% if devise_mapping.rememberable? -%>
@@ -15,7 +15,7 @@
       </div>
     <% end -%> -->
 
-    <div class="field col-xs-1">
+    <div class="field col-md-1">
       <%= f.submit "Log in", class: 'btn btn-success btn-sm' %>
     </div>
   </div>

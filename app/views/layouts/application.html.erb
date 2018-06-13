@@ -2,40 +2,41 @@
 <html>
   <head>
     <title>Fishnet</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" href="/../../assets/styles.css">
     <link rel="stylesheet" href="/../../assets/stylesheets/fontawesome/fontawesome-all.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-light" style="background-color: #00c8d8;">
       <div class="container">
-        <div class="row">
-          <div class="col-md-2">
-            <a class="" href="#">
-              <%= image_tag 'logo2_large.png', class: 'img-fluid', width: '40%' %>
-              <span class="h3">Fishnet</h3>
+          <div class="col-md-3">
+            <a class="navbar-brand" href="#">
+              <%= image_tag 'fishnet-logo.png', class: 'img-fluid', width: '100%', alt: 'fishnet' %>
             </a>
           </div>
-          <div class="col-md-6 offset-md-4">
+          <div class="col-md-6 offset-md-3">
             <% if current_user %>
               <p class="text-right"><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
             <% else %>
               <%= render 'devise/sessions/form' %>
             <% end %>
           </div>
-        </div>
       </div>
     </nav>
 
     <div class="container">
-      <div class="row">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+      <div class="row d-flex align-items-center m-3">
+        <div class="col-md-4 offset-md-4">
+          <% if notice %>
+            <div class="alert alert-primary"><%= notice %></div>
+          <% end %>
+          <% if alert %>
+            <div class="alert alert-warning"><%= alert %></div>
+          <% end %>
+        </div>
       </div>
     </div>
 
