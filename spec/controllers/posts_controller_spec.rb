@@ -101,12 +101,12 @@ RSpec.describe PostsController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) { {content: "fish is great", user: @user} }
+      let(:new_content) { "fish are great!" }
+      let(:new_attributes) { {content: new_content, user: @user} }
 
-      xit "updates the requested post" do
+      it "updates the requested post" do
         put :update, params: {id: @post.id, post: new_attributes}, session: valid_session
-        p response.request
-        expect(params['notice']).to eq("Post was successfully updated.")
+        expect(@post.reload.content).to eq(new_content)
       end
 
       it "redirects to the post" do
