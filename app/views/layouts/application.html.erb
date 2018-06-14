@@ -21,7 +21,9 @@
             <% if current_user %>
               <p class="text-right"><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
             <% else %>
-              <%= render 'devise/sessions/form' %>
+              <% if !current_page?(user_session_path) %>
+                <%= render 'devise/sessions/form' %>
+              <% end %>
             <% end %>
           </div>
       </div>

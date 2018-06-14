@@ -6,6 +6,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'database_cleaner'
 require 'support/factory_bot'
 require 'support/login_helper'
+require 'support/posts_views_helper'
 require 'rspec/rails'
 
 DatabaseCleaner.strategy = :truncation
@@ -23,7 +24,6 @@ RSpec.configure do |config|
   end
 
   config.include Devise::Test::ControllerHelpers, type: :controller
-
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
