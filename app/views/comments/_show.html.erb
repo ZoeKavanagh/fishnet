@@ -1,16 +1,19 @@
-
-
-
     <% post.comments.each do |comment| %>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="row mb-4">
+      <div class="col-md-4">
         <%= comment.user.firstname %> <%= comment.user.lastname %>
+        <br>
         <%= comment.created_at.strftime('%R %d/%m/%Y') %>
       </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
+      <div class="col-md-8">
+        <div class="card border-info mb-3">
+          <div class="card-body text-info">
             <%= comment.content %>
+            <div class="card-text text-right">
+              <%= link_to(post_comment_path(post, comment), method: :delete, data: { confirm: 'Are you sure?' }) do %>
+                <i class="far fa-trash-alt fa-lg"></i>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
