@@ -1,8 +1,7 @@
 RSpec.feature 'View post', type: :feature do
 
   before(:each) do
-    @user = create(:user)
-    sign_up
+    log_in
     @post = Post.new(:content => 'Ocean blue')
     @post.user_id = @user.id
     @post.save
@@ -10,7 +9,7 @@ RSpec.feature 'View post', type: :feature do
 
   scenario 'User can get to posts feed' do
     visit '/posts'
-    expect(page).to have_content('Content')
+    expect(page).to have_content('Feed')
   end
 
   scenario 'User can view a post' do
