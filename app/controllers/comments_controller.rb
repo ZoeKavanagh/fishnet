@@ -5,13 +5,18 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
 
-    if @comment.save
-      flash[:success] = "Comment saved"
-      redirect_to posts_path
-    else
-      flash[:alert] = "Comment not saved. Check the comment form."
-      render posts_path
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to @post, notice: 'Comment was successfully saved.' }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
+  end
+
+  def show
   end
 
 
@@ -19,7 +24,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
     @comment.destroy
     flash[:success] = "Comment deleted"
-    redirect_to posts_path
+    redirect_to post_path
   end
 
 
