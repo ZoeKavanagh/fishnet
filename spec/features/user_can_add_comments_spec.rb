@@ -16,5 +16,8 @@ RSpec.feature 'New comment', type: :feature do
     click_on "New Post"
     fill_in "post_content", with: 'My first post'
     click_button "Create Post"
+    fill_in "comment_content", with: "My first comment"
+    click_button "Add Comment"
+    expect(page).to have_content "My first comment"
   end
 end

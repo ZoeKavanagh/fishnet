@@ -1,0 +1,4 @@
+<%= form_for [post, post.comments.new] do |f| %>
+  <%= f.text_field :content, placeholder: 'Add a comment...' %>
+<% end %>
+<a class="btn btn-primary" href="/posts/:post_id/comments/new">Add Comment </a>
