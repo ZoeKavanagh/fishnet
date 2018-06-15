@@ -18,19 +18,6 @@
         1,
         null
       ],
-      "/Users/benfurber/github/makers/week8/fishnet/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/benfurber/github/makers/week8/fishnet/app/helpers/comments_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/benfurber/github/makers/week8/fishnet/app/helpers/posts_helper.rb": [
-        1,
-        null,
-        null
-      ],
       "/Users/benfurber/github/makers/week8/fishnet/app/helpers/user_helper.rb": [
         1,
         null,
@@ -50,10 +37,6 @@
         12,
         null,
         null,
-        null
-      ],
-      "/Users/benfurber/github/makers/week8/fishnet/app/helpers/welcome_page_helper.rb": [
-        1,
         null
       ],
       "/Users/benfurber/github/makers/week8/fishnet/app/controllers/comments_controller.rb": [
@@ -215,24 +198,8 @@
         0,
         0,
         0
-      ],
-      "/Users/benfurber/github/makers/week8/fishnet/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/Users/benfurber/github/makers/week8/fishnet/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/benfurber/github/makers/week8/fishnet/app/channels/application_cable/channel.rb": [
-        0,
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1529050358
+    "timestamp": 1529051083
   }
 }
