@@ -6,9 +6,7 @@ RSpec.describe PostsController, type: :controller do
   let(:new_post) { create(:post_1, 'user' => user) }
   let(:valid_attributes) { {content: "fish", user: @user} }
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) { {content: nil, 'user' => 'dsfg', 'zero' => 0}}
 
   let(:valid_session) { {} }
 
@@ -63,7 +61,7 @@ RSpec.describe PostsController, type: :controller do
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
         post :create, params: {post: invalid_attributes}, session: valid_session
-        expect(response).to be_success
+        expect(response).to have_http_status(200)
       end
     end
   end
@@ -87,7 +85,7 @@ RSpec.describe PostsController, type: :controller do
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
         put :update, params: {id: @post.id, post: invalid_attributes}, session: valid_session
-        expect(response).to be_success
+        expect(response).to have_http_status(200)
       end
     end
   end
