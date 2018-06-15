@@ -11,13 +11,12 @@ RSpec.feature 'New comment', type: :feature do
     fill_in "user_lastname", with: "Kavanagh"
     fill_in "sign-up-email", with: "zoe@zoe.com"
     fill_in "sign-up-password", with: "fishnet123"
-    fill_in "user_password_confirmation", with: "fishnet123"
+    fill_in "sign-up-confirm-email", with: "fishnet123"
     click_button "Sign up"
-    click_on "New Post"
-    fill_in "post_content", with: 'My first post'
-    click_button "Create Post"
+    fill_in 'post_content', with: "My first post"
+    click_button 'Flap'
     fill_in "comment_content", with: "My first comment"
-    click_button "Add Comment"
+    click_button "Submit Comment"
     expect(page).to have_content "My first comment"
   end
 end
