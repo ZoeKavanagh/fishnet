@@ -1,14 +1,11 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col-md-8">
-
-      <%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
-
+      <%= render 'form', post: @post %>
       <h1>Feed</h1>
       <% @posts.reverse.each do |post| %>
         <%= render partial: 'post', locals: { post: post } %>
       <% end %>
-
     </div>
   </div>
 </div>
