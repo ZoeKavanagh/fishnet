@@ -2,6 +2,8 @@
   <div class="row justify-content-md-center">
     <div class="col-md-8">
 
+      <%= render partial: 'form', locals: { post: @post } %>
+
       <%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
 
       <h1>Feed</h1>
