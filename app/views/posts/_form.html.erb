@@ -1,22 +1,29 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<div class="card mb-5">
+  <div class="p-3">
+    <%= form_with(model: post, local: true) do |form| %>
+      <% if post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
+      <div class="form-row">
+        <div class="field col-md-12">
+          <%= form.text_area :content, class: 'form-control', placeholder: 'Flip us something' %>
+        </div>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="form-row">
+        <div class="field col-md-4 offset-8">
+          <%= form.submit "Flap", class: 'btn btn-info btn-lg btn-block' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
